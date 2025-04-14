@@ -1,0 +1,400 @@
+/* Editor styles */
+.ProseMirror {
+  padding: 2rem 2.5rem;
+  min-height: 70vh;
+  border: none;
+  border-radius: 0;
+  outline: none;
+  font-family: var(--font-geist-sans), 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+  font-size: 1.125rem;
+  line-height: 1.7;
+  color: #333333;
+  background-color: #ffffff;
+  box-shadow: none;
+  max-width: 100%;
+  overflow-wrap: break-word;
+}
+
+.ProseMirror:focus {
+  border: none;
+  box-shadow: none;
+}
+
+/* Placeholder styling */
+.ProseMirror p.is-editor-empty:first-child::before {
+  content: "Start writing here...";
+  float: left;
+  color: #9ca3af;
+  pointer-events: none;
+  height: 0;
+  font-style: italic;
+  font-family: var(--font-geist-sans), 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+  font-size: 1.125rem;
+  opacity: 0.8;
+}
+
+/* Callout styling */
+.callout {
+  padding: 1.5rem;
+  margin: 1.75rem 0;
+  border-radius: 4px;
+  border-left: 3px solid;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+}
+
+.callout[data-type="info"] {
+  background-color: #f0f7ff;
+  border-left-color: #3b82f6;
+}
+
+.callout[data-type="success"] {
+  background-color: #f0fdf4;
+  border-left-color: #22c55e;
+}
+
+.callout[data-type="warning"] {
+  background-color: #fffbeb;
+  border-left-color: #f59e0b;
+}
+
+.callout[data-type="error"] {
+  background-color: #fef2f2;
+  border-left-color: #ef4444;
+}
+
+/* Heading styles for non-inline headings */
+.ProseMirror h1:not([data-inline]) {
+  display: block;
+  font-family: var(--font-geist-sans), 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+  font-size: 2.5rem;
+  font-weight: 700;
+  line-height: 1.3;
+  margin-top: 2.5rem;
+  margin-bottom: 1.5rem;
+  color: #111827;
+  letter-spacing: -0.025em;
+}
+
+.ProseMirror h2:not([data-inline]) {
+  display: block;
+  font-family: var(--font-geist-sans), 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+  font-size: 1.875rem;
+  font-weight: 600;
+  line-height: 1.4;
+  margin-top: 2rem;
+  margin-bottom: 1.25rem;
+  color: #1f2937;
+  letter-spacing: -0.015em;
+}
+
+.ProseMirror h3:not([data-inline]) {
+  display: block;
+  font-family: var(--font-geist-sans), 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+  font-size: 1.5rem;
+  font-weight: 600;
+  line-height: 1.5;
+  margin-top: 1.75rem;
+  margin-bottom: 1rem;
+  color: #374151;
+  letter-spacing: -0.01em;
+}
+
+/* Heading styles for inline headings */
+.ProseMirror h1[data-inline] {
+  display: inline;
+  font-family: var(--font-geist-sans), 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+  font-size: 1.5rem;
+  font-weight: 700;
+  line-height: 1.3;
+  margin: 0;
+  color: #111827;
+  letter-spacing: -0.025em;
+}
+
+.ProseMirror h2[data-inline] {
+  display: inline;
+  font-family: var(--font-geist-sans), 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+  font-size: 1.25rem;
+  font-weight: 600;
+  line-height: 1.4;
+  margin: 0;
+  color: #1f2937;
+  letter-spacing: -0.015em;
+}
+
+.ProseMirror h3[data-inline] {
+  display: inline;
+  font-family: var(--font-geist-sans), 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+  font-size: 1.125rem;
+  font-weight: 600;
+  line-height: 1.5;
+  margin: 0;
+  color: #374151;
+  letter-spacing: -0.01em;
+}
+
+/* Paragraph styles */
+.ProseMirror p {
+  margin-bottom: 1.25rem;
+  line-height: 1.7;
+}
+
+/* List styles */
+.ProseMirror ul {
+  list-style-type: disc;
+  padding-left: 1.75rem;
+  margin-bottom: 1.25rem;
+}
+
+.ProseMirror ol {
+  list-style-type: decimal;
+  padding-left: 1.75rem;
+  margin-bottom: 1.25rem;
+}
+
+/* Link styles */
+.ProseMirror a {
+  color: #2563eb;
+  text-decoration: none;
+  border-bottom: 1px solid rgba(37, 99, 235, 0.3);
+  transition: border-color 0.2s ease, color 0.2s ease;
+}
+
+.ProseMirror a:hover {
+  color: #1d4ed8;
+  border-bottom-color: rgba(29, 78, 216, 0.5);
+}
+
+/* Code styles */
+.ProseMirror code {
+  background-color: #f1f5f9;
+  padding: 0.2rem 0.4rem;
+  border-radius: 3px;
+  font-family: 'Menlo', 'Monaco', 'Courier New', monospace;
+  font-size: 0.875rem;
+  color: #0f172a;
+}
+
+/* Comment styles */
+.ProseMirror .comment {
+  background-color: #fffbeb;
+  border-left: 2px solid #f59e0b;
+  padding: 0.75rem 1rem;
+  margin: 1rem 0;
+  border-radius: 3px;
+}
+
+/* Highlighted comment text */
+.ProseMirror.has-highlighted-comment .comment-highlight {
+  background-color: rgba(245, 158, 11, 0.15);
+  border-bottom: 1px dotted #f59e0b;
+}
+
+/* Navbar styling */
+.navbar-container {
+  padding: 0.75rem 0;
+  background-color: #ffffff;
+  border-bottom: 1px solid #e5e7eb;
+}
+
+/* Popup styling */
+.popup-container {
+  background-color: #ffffff;
+  border-radius: 4px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  border: 1px solid #e5e7eb;
+  z-index: 50;
+}
+
+/* Button styling */
+.editor-button {
+  padding: 0.5rem;
+  border-radius: 4px;
+  transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.editor-button:hover {
+  background-color: #f9fafb;
+}
+
+.editor-button.active {
+  background-color: #f3f4f6;
+  color: #2563eb;
+}
+
+/* Input styling */
+.editor-input {
+  width: 100%;
+  padding: 0.625rem 0.75rem;
+  border: 1px solid #e5e7eb;
+  border-radius: 4px;
+  outline: none;
+  transition: border-color 0.2s ease;
+  font-size: 0.875rem;
+}
+
+.editor-input:focus {
+  border-color: #3b82f6;
+  box-shadow: 0 0 0 2px rgba(59, 130, 246, 0.1);
+}
+
+/* Regular headings */
+.ProseMirror h1:not([data-inline]) {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+  font-size: 2.5rem;
+  line-height: 1.3;
+  font-weight: 700;
+  margin-bottom: 1.5rem;
+  color: #111827;
+  letter-spacing: -0.025em;
+}
+
+.ProseMirror h2:not([data-inline]) {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+  font-size: 1.875rem;
+  line-height: 1.4;
+  font-weight: 600;
+  margin-bottom: 1.25rem;
+  color: #1f2937;
+  letter-spacing: -0.015em;
+}
+
+.ProseMirror h3:not([data-inline]) {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+  font-size: 1.5rem;
+  line-height: 1.5;
+  font-weight: 600;
+  margin-bottom: 1rem;
+  color: #374151;
+  letter-spacing: -0.01em;
+}
+
+/* Inline headings */
+.ProseMirror h1[data-inline] {
+  display: inline;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #111827;
+  margin: 0;
+  letter-spacing: -0.025em;
+}
+
+.ProseMirror h2[data-inline] {
+  display: inline;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+  font-size: 1.875rem;
+  font-weight: 600;
+  color: #1f2937;
+  margin: 0;
+  letter-spacing: -0.015em;
+}
+
+.ProseMirror h3[data-inline] {
+  display: inline;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: #374151;
+  margin: 0;
+  letter-spacing: -0.01em;
+}
+
+.ProseMirror [data-text-align="center"] {
+  text-align: center;
+}
+
+.ProseMirror [data-text-align="right"] {
+  text-align: right;
+}
+
+.ProseMirror [data-text-align="justify"] {
+  text-align: justify;
+}
+
+.ProseMirror li {
+  margin-bottom: 0.5rem;
+  padding-left: 0.25rem;
+}
+
+/* Highlighted comment text */
+.ProseMirror.has-highlighted-comment ::selection {
+  background-color: rgba(59, 130, 246, 0.15);
+}
+
+/* Comment button styles */
+.comment-button {
+  background-color: #f9fafb;
+  color: #4b5563;
+  border-radius: 4px;
+  padding: 0.375rem;
+  margin-right: 0.75rem;
+  transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.comment-button:hover {
+  background-color: #f3f4f6;
+}
+
+.comment-button.active {
+  background-color: #eff6ff;
+  color: #2563eb;
+}
+
+/* Tooltip styles */
+[data-tooltip] {
+  position: relative;
+}
+
+[data-tooltip]:before {
+  content: attr(data-tooltip);
+  position: absolute;
+  bottom: -32px;
+  left: 50%;
+  transform: translateX(-50%);
+  padding: 5px 10px;
+  background-color: #1f2937;
+  color: white;
+  font-size: 12px;
+  font-weight: 500;
+  border-radius: 4px;
+  white-space: nowrap;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.2s ease, visibility 0.2s ease;
+  pointer-events: none;
+  z-index: 100;
+  letter-spacing: 0.01em;
+}
+
+[data-tooltip]:hover:before {
+  opacity: 1;
+  visibility: visible;
+  transition-delay: 0.5s;
+}
+
+/* Diff view styling */
+.ProseMirror .diff-added {
+  background-color: rgba(34, 197, 94, 0.2);
+  border-bottom: 1px solid rgba(34, 197, 94, 0.5);
+  display: inline;
+  white-space: pre-wrap;
+  padding: 0 2px;
+}
+
+.ProseMirror .diff-removed {
+  background-color: rgba(239, 68, 68, 0.2);
+  text-decoration: line-through;
+  text-decoration-color: rgba(239, 68, 68, 0.5);
+  text-decoration-thickness: 1px;
+  display: inline;
+  white-space: pre-wrap;
+  padding: 0 2px;
+}
+
+/* Add a subtle separator between old and new content */
+.ProseMirror .diff-removed + .diff-added {
+  margin-left: 0.25em;
+  padding-left: 0.25em;
+  border-left: 1px solid #e5e7eb;
+} 

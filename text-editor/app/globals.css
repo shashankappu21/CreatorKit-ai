@@ -1,0 +1,120 @@
+@import "tailwindcss";
+
+body {
+  background: #f8f9fa;
+  color: #333333;
+  font-family: var(--font-geist-sans), 'Georgia', serif;
+  min-height: 100vh;
+  overflow-x: hidden;
+  overflow-y: auto;
+  line-height: 1.7;
+}
+
+/* Disable text selection in the editor when AI response popup is open */
+body.ai-popup-open .ProseMirror {
+  user-select: none !important;
+  -webkit-user-select: none !important;
+  -moz-user-select: none !important;
+  -ms-user-select: none !important;
+  pointer-events: none;
+}
+
+/* Allow text selection in the AI popup */
+.ai-popup {
+  user-select: text !important;
+  -webkit-user-select: text !important;
+  -moz-user-select: text !important;
+  -ms-user-select: text !important;
+  pointer-events: auto;
+  position: fixed !important;
+  z-index: 1000 !important;
+  max-height: 80vh;
+  display: flex;
+  flex-direction: column;
+  font-family: var(--font-inter), 'Inter', sans-serif;
+}
+
+/* Ensure text selection works in the response area */
+.ai-popup .prose {
+  user-select: text !important;
+  -webkit-user-select: text !important;
+  -moz-user-select: text !important;
+  -ms-user-select: text !important;
+  pointer-events: auto;
+  overflow-y: auto;
+}
+
+/* Ensure proper scrolling behavior */
+html {
+  overflow-y: scroll;
+  height: 100%;
+}
+
+/* Add some padding to the bottom of the page when popup is open */
+body.ai-popup-open {
+  padding-bottom: 80vh;
+}
+
+/* Preview changes styling */
+.ProseMirror span.bg-red-100 {
+  background-color: rgba(254, 202, 202, 0.4);
+  text-decoration: line-through;
+  text-decoration-color: rgba(220, 38, 38, 0.5);
+  text-decoration-thickness: 1px;
+  display: inline;
+  white-space: pre-wrap;
+}
+
+.ProseMirror span.bg-green-100 {
+  background-color: rgba(187, 247, 208, 0.3);
+  display: inline;
+  white-space: pre-wrap;
+}
+
+/* Add a subtle separator between old and new content */
+.ProseMirror span.bg-red-100 + span.bg-green-100 {
+  margin-left: 0.25em;
+  padding-left: 0.25em;
+  border-left: 1px solid #e5e7eb;
+}
+
+/* Ensure proper line breaks */
+.ProseMirror p {
+  white-space: pre-wrap;
+  word-break: break-word;
+}
+
+/* UI components styling */
+.navbar-container button {
+  font-family: var(--font-inter), 'Inter', sans-serif;
+}
+
+.popup-container {
+  font-family: var(--font-inter), 'Inter', sans-serif;
+}
+
+/* Custom scrollbar for a more refined look */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #c1c1c1;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #a0a0a0;
+}
+
+/* Focus styles for better accessibility */
+*:focus-visible {
+  outline: 2px solid #3b82f6;
+  outline-offset: 2px;
+}
